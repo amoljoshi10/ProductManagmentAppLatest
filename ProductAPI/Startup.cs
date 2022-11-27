@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using ProductAPI.Interfaces;
+using ProductAPI.Services;
+using Microsoft.OpenApi.Models;
+using CachingService;
+
+namespace ProductAPI
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment { get; }
+        // This method gets called by the runtime. Use  this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddApplicationInsightsTelemetry();
+            services.AddMemoryCache();
+            services.AddScoped<IInMemoryCacheService, InMemoryCacheService>();
+            services.AddScoped<IRedisCacheService, RedisCacheService>();
+            services.AddScoped<ICacheService, CacheService>();
+
+            //if (Environment.IsDevelopment())
+            //{
+            //    services.AddDistributedMemoryCache();
+            //}
+            //else
+            //{
+            //    //services.AddStackExchangeRedisCache(options =>
+            //    //{
+            //    //    options.Configuration = Configuration["MyRedisConStr"];
+            //    //    options.InstanceName = "SampleInstance";
+            //    //});
+            //}
+            services.AddRouting();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddControllers();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Product API", Version = "v1" });
+            });
+                
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            //string kvUri =
+            //        "https://kv-for-apim.vault.azure.net/";
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Product API V1");
+            });
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+            app.UseRouting();
+
+
+            
+        }
+    }
+}

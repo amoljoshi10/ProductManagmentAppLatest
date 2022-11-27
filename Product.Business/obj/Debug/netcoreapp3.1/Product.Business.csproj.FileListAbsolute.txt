@@ -1,0 +1,21 @@
+E:\Amol\Projects\VS2019Projects\Product.Business\bin\Debug\netcoreapp3.1\Product.Business.deps.json
+E:\Amol\Projects\VS2019Projects\Product.Business\bin\Debug\netcoreapp3.1\Product.Business.dll
+E:\Amol\Projects\VS2019Projects\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.AssemblyInfoInputs.cache
+E:\Amol\Projects\VS2019Projects\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.AssemblyInfo.cs
+E:\Amol\Projects\VS2019Projects\Product.Business\bin\Debug\netcoreapp3.1\Product.Business.pdb
+E:\Amol\Projects\VS2019Projects\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.dll
+E:\Amol\Projects\VS2019Projects\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.pdb
+E:\Amol\Projects\VS2019Projects\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.csproj.CoreCompileInputs.cache
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\bin\Debug\netcoreapp3.1\Product.Business.deps.json
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\bin\Debug\netcoreapp3.1\Product.Business.dll
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\bin\Debug\netcoreapp3.1\Product.Business.pdb
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\bin\Debug\netcoreapp3.1\CachingService.dll
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\bin\Debug\netcoreapp3.1\CachingService.pdb
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.csproj.AssemblyReference.cache
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.AssemblyInfoInputs.cache
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.AssemblyInfo.cs
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.csproj.CoreCompileInputs.cache
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.csproj.CopyComplete
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.dll
+E:\C backup\AMOL\Projects\ProductManagment\Product.Business\obj\Debug\netcoreapp3.1\Product.Business.pdb

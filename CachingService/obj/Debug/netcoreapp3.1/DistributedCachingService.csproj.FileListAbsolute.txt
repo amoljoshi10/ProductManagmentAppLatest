@@ -1,0 +1,17 @@
+E:\Amol\Projects\VS2019Projects\CachingService\bin\Debug\netcoreapp3.1\DistributedCachingService.deps.json
+E:\Amol\Projects\VS2019Projects\CachingService\bin\Debug\netcoreapp3.1\DistributedCachingService.dll
+E:\Amol\Projects\VS2019Projects\CachingService\bin\Debug\netcoreapp3.1\DistributedCachingService.pdb
+E:\Amol\Projects\VS2019Projects\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.AssemblyInfoInputs.cache
+E:\Amol\Projects\VS2019Projects\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.AssemblyInfo.cs
+E:\Amol\Projects\VS2019Projects\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.csproj.CoreCompileInputs.cache
+E:\Amol\Projects\VS2019Projects\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.dll
+E:\Amol\Projects\VS2019Projects\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.pdb
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\bin\Debug\netcoreapp3.1\DistributedCachingService.deps.json
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\bin\Debug\netcoreapp3.1\DistributedCachingService.dll
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\bin\Debug\netcoreapp3.1\DistributedCachingService.pdb
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.GeneratedMSBuildEditorConfig.editorconfig
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.AssemblyInfoInputs.cache
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.AssemblyInfo.cs
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.csproj.CoreCompileInputs.cache
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.dll
+E:\C backup\AMOL\Projects\ProductManagment\CachingService\obj\Debug\netcoreapp3.1\DistributedCachingService.pdb

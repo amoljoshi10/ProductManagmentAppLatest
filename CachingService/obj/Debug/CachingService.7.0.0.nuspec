@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>CachingService</id>
+    <version>7.0.0</version>
+    <authors>CachingService</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="StackExchange.Redis" version="2.2.50" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="E:\C backup\AMOL\Projects\ProductManagment\CachingService\bin\Debug\netcoreapp3.1\CachingService.dll" target="lib\netcoreapp3.1\CachingService.dll" />
+  </files>
+</package>

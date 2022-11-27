@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "apis_product_api_path": {
+            "value": null
+        },
+        "subscriptions_612517b67583d6005a070001_displayName": {
+            "value": null
+        },
+        "subscriptions_612517b67583d6005a070002_displayName": {
+            "value": null
+        },
+        "subscriptions_61272bff46346109a074a901_displayName": {
+            "value": null
+        },
+        "users_1_lastName": {
+            "value": null
+        },
+        "service_apimservice_products_customers_name": {
+            "value": null
+        },
+        "components_AppInsightForPordCustAPIM_externalid": {
+            "value": null
+        }
+    }
+}
