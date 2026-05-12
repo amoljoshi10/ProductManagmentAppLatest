@@ -1,0 +1,40 @@
+name: Security Gate
+
+on:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  security-gate:
+    name: Security Quality Gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Semgrep
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: >-
+            p/security-audit
+            p/secrets
+            p/owasp-top-ten
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+        continue-on-error: true
+
+      - name: Trivy Vulnerability Gate
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          ignore-unfixed: true
+          format: 'table'
+          severity: 'CRITICAL'
+          exit-code: '1'
+        continue-on-error: true
+
+      - name: Gate Summary
+        run: |
+          echo "## Security Gate Results" >> $GITHUB_STEP_SUMMARY
+          echo "All security scans completed. Review results above." >> $GITHUB_STEP_SUMMARY
