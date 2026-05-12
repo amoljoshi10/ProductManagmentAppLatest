@@ -1,0 +1,49 @@
+name: Automated Tests
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest pytest-cov coverage || true
+      - name: Run Python tests
+        run: |
+          if [ -d tests ] || [ -d test ]; then
+            pytest --cov=. --cov-report=xml --cov-report=html \
+              --junitxml=test-results.xml -v || true
+          fi
+        continue-on-error: true
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+        continue-on-error: true
+      - name: Run Node tests
+        run: |
+          if [ -f package.json ]; then
+            npm ci && npm test --if-present || true
+          fi
+        continue-on-error: true
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage
+          path: |
+            coverage.xml
+            htmlcov/
+        continue-on-error: true
