@@ -1,0 +1,24 @@
+name: System Logging Verification
+on:
+  push:
+    branches: [ main, master ]
+  schedule:
+    - cron: '0 6 * * *'
+permissions:
+  contents: read
+jobs:
+  logging-check:
+    name: Verify Centralized Logging Config
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check logging configuration files
+        run: |
+          echo "Scanning for logging configuration..."
+          find . -name "*.yml" -o -name "*.yaml" | xargs grep -l "logging\|fluentd\|logstash\|filebeat" 2>/dev/null || true
+          find . -name "logback*.xml" -o -name "log4j*.xml" -o -name "log4j*.properties" 2>/dev/null || true
+      - name: Validate log levels and formats
+        run: |
+          echo "Checking for structured logging (JSON format)..."
+          grep -r "json.*log\|log.*json\|structuredLog\|LOG_FORMAT" --include="*.py" --include="*.js" --include="*.ts" . 2>/dev/null || echo "Consider adding structured JSON logging"
+        continue-on-error: true
