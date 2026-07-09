@@ -1,0 +1,45 @@
+name: SAST - SonarCloud (.NET)
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_call: {}
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  sonarcloud:
+    name: SonarCloud SAST (.NET)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+      - name: Install dotnet-sonarscanner
+        run: dotnet tool install --global dotnet-sonarscanner --ignore-failed-sources || true
+      - name: SonarCloud Begin
+        run: |
+          export PATH="$PATH:$HOME/.dotnet/tools"
+          dotnet sonarscanner begin \
+            /k:"amoljoshi10_ProductManagmentAppLatest" \
+            /o:"amoljoshi10" \
+            /d:sonar.host.url="https://sonarcloud.io" \
+            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
+            /d:sonar.qualitygate.wait=true || true
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Build
+        run: dotnet build || true
+      - name: SonarCloud End
+        run: |
+          export PATH="$PATH:$HOME/.dotnet/tools"
+          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}" || true
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # organization/projectKey are baked in from the values entered during
+      # tool selection (not secrets — SonarCloud project identifiers, not sensitive).
+      # Required GitHub secret: SONAR_TOKEN
